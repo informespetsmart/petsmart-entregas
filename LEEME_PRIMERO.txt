@@ -1,0 +1,50 @@
+PETSMART · MINIAPP DE ENTREGAS ANDROID
+PAQUETE COMPLETO DE ARCHIVOS DE LA MINIAPP
+
+QUÉ INCLUYE
+- index.html: interfaz de la miniapp.
+- app.js: acceso, lectura de pedidos, subida de imágenes y registro de evidencias.
+- firebase-config.js: conexión con el proyecto Firebase existente.
+- manifest.webmanifest, icon.svg y sw.js: instalación PWA y caché básica.
+
+IMPORTANTE: ESTE PAQUETE NO MODIFICA TU INVENTARIO PRINCIPAL.
+Reemplaza únicamente los archivos del repositorio de la miniapp petsmart-entregas. No copies estos archivos al repositorio del inventario principal.
+
+QUÉ SERVICIOS USA Y PARA QUÉ
+- Firebase Authentication: mantiene el inicio de sesión de Chavalillo y Chavalilla.
+- Firebase Realtime Database: lee la ruta productos para mostrar pedidos y actualiza entregaEstado cuando se marca una entrega como entregada. También guarda solo los metadatos/enlaces de las fotos en entregasEvidencias para que la evidencia aparezca al volver a abrir la app y en el panel administrador.
+- Cloudinary: recibe los archivos de imagen. La app no usa Firebase Storage.
+
+Por qué no se puede eliminar Firebase por completo sin cambiar funciones: los pedidos y estados actuales viven en Firebase. Si quitamos también el pequeño registro de metadatos de evidencia, la app no podrá recuperar la lista de fotos entre dispositivos o sesiones sin añadir otro backend. Esta versión mantiene el uso de Firebase limitado a esas funciones necesarias.
+
+CUENTAS
+Los alias de inicio de sesión son Chavalillo y Chavalilla. Deben existir en Firebase Authentication con los correos configurados en app.js y proveedor Email/Password. La contraseña es la que ya se haya asignado a cada cuenta; no se guarda en los archivos.
+
+CLOUDINARY
+- Cloud name: decztjlu9
+- Upload preset: petsmart_entregas
+- Carpeta solicitada por carga: PetSmart2026/Entregas/<id-del-pedido>
+- Tipo de subida actual: unsigned.
+
+ADVERTENCIA DE PRIVACIDAD
+Las imágenes subidas mediante un preset unsigned y sus secure_url no deben considerarse privadas. El inicio de sesión de esta miniapp no vuelve privadas las URL de Cloudinary. Hasta implementar un backend que firme las subidas y controle el acceso, probar solo con imágenes ficticias o sin datos personales/de clientes. Nunca pongas el API Secret de Cloudinary en JavaScript, HTML o GitHub.
+
+INSTALACIÓN / REEMPLAZO
+1. Descarga y descomprime el ZIP.
+2. En el repositorio GitHub de la miniapp petsmart-entregas, reemplaza los archivos de la carpeta publicada por los archivos runtime incluidos: index.html, app.js, firebase-config.js, manifest.webmanifest, icon.svg y sw.js. Sube también este LEEME_PRIMERO.txt si deseas conservar la documentación.
+3. No reemplaces las reglas globales de Firebase ni cambies la configuración de Firebase del inventario principal como parte de este paso.
+4. Confirma que GitHub Pages publique desde la carpeta/rama correcta y abre la URL HTTPS.
+5. Si el navegador sigue mostrando la versión anterior, cierra la PWA, abre la URL en Chrome y recarga; puede ser necesario borrar los datos del sitio o actualizar la caché de la PWA.
+6. Prueba primero con una cuenta ya creada y una imagen sin información personal.
+
+ERRORES DE ACCESO
+La pantalla ahora muestra mensajes más específicos para errores comunes de autenticación: contraseña/cuenta incorrecta, dominio no autorizado, proveedor Email/Password deshabilitado o problema de conexión. Esto facilita diagnosticar, pero no puede crear cuentas ni autorizar dominios automáticamente.
+
+FIREBASE Y PERMISOS
+La app necesita permisos de lectura para productos y ventas/pedidos, escritura para actualizar los campos de estado de entrega y lectura/escritura autenticada en entregasEvidencias. Las reglas existentes pueden impedir alguna operación. No reemplaces todas las reglas por un archivo de ejemplo: tu proyecto también es usado por el inventario principal y un cambio global podría exponer o bloquear datos. Si vuelve a aparecer PERMISSION_DENIED, hay que revisar solo las reglas de las rutas necesarias y conservar el resto.
+
+VERIFICACIONES REALIZADAS EN ESTE PAQUETE
+- Sintaxis de app.js verificada con Node.js.
+- Se comprobó que index.html apunta a app.js y que los recursos PWA referenciados están incluidos.
+- El ZIP incluye los archivos necesarios para publicar la miniapp.
+- No se ha podido iniciar sesión ni probar una subida real contra tu Firebase/Cloudinary desde este entorno; por ello no se promete que el acceso vaya a funcionar hasta verificar cuentas, dominio y permisos en vivo.
