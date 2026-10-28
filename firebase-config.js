@@ -1,4 +1,4 @@
-export const firebaseConfig = {const firebaseConfig = {
+export const firebaseConfig = {
   apiKey: "AIzaSyDBB2yeDGTYzbqX5p6sY411g6Qsw8JEgu0",
   authDomain: "petsmart-inventario.firebaseapp.com",
   databaseURL: "https://petsmart-inventario-default-rtdb.firebaseio.com",
