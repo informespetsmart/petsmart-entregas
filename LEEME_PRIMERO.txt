@@ -1,0 +1,52 @@
+PETSMART · MINIAPP DE ENTREGAS ANDROID
+
+QUÉ HACE
+- Aplicación web instalable (PWA) para Android.
+- Consulta ventas existentes en productos y las agrupa por ventaGrupoId.
+- Muestra cliente, teléfono, dirección, distrito y fecha/horario.
+- Permite seleccionar/tomar fotografías y subirlas a Cloudinary.
+- Guarda en Firebase Realtime Database los metadatos y el enlace de Cloudinary.
+- No registra ventas nuevas.
+
+USUARIOS
+- Chavalillo -> chavalillo@repartidores.petsmart.app
+- Chavalilla -> chavalilla@repartidores.petsmart.app
+Las cuentas deben existir en Firebase Authentication > Users y usar el proveedor Email/Password.
+
+PASO 1 — CREAR UN PRESET SEPARADO EN CLOUDINARY (SOLO PARA PRUEBAS)
+1. Entra a https://console.cloudinary.com/ y abre tu cuenta.
+2. Busca Settings / Upload / Upload presets (la ubicación puede variar según la interfaz).
+3. Crea un preset nuevo llamado exactamente: petsmart_entregas
+4. Para esta prueba, configura el preset como Unsigned y, si permite fijar carpeta, usa PetSmart2026/Entregas.
+5. Guarda el preset.
+La miniapp usa cloud decztjlu9 y el preset petsmart_entregas. No reutiliza cupones_preestablecidos.
+
+ADVERTENCIA DE PRIVACIDAD — IMPORTANTE
+Un preset Unsigned sube imágenes mediante un enlace de Cloudinary que puede abrir cualquiera que conozca el URL. Iniciar sesión en la miniapp protege la interfaz, pero NO convierte el enlace de la imagen en privado.
+Por eso, esta versión sirve solo para probar el flujo con imágenes ficticias o sin datos de clientes. NO subas fotos reales, direcciones ni evidencia identificable hasta implementar un backend que firme las subidas y genere URLs privadas/temporales de Cloudinary, y hasta revisar las reglas de Firebase.
+No se incluye ni se debe colocar el API Secret de Cloudinary en JavaScript, HTML, GitHub Pages ni en este archivo.
+
+PASO 2 — FIREBASE
+1. Proyecto: petsmart-inventario.
+2. Authentication debe tener habilitado Email/Password.
+3. Crea estos usuarios si aún no existen:
+   - chavalillo@repartidores.petsmart.app
+   - chavalilla@repartidores.petsmart.app
+4. Realtime Database debe permitir a usuarios autenticados leer/escribir la ruta entregasEvidencias. El archivo firebase-rules-realtime-database.json muestra una propuesta parcial, pero conserva permisos públicos existentes en otras rutas. No reemplaces las reglas globales sin revisarlas: las reglas actuales permiten lectura/escritura públicas en productos, ventas y otros módulos.
+5. La miniapp no usa Firebase Storage; las fotos se suben a Cloudinary.
+
+PASO 3 — PUBLICAR Y PROBAR EN ANDROID
+1. Publica toda la carpeta MiniAppEntregasPetSmart en un hosting HTTPS (por ejemplo, GitHub Pages).
+2. En Firebase Authentication > Settings > Authorized domains, añade el dominio exacto de publicación si no aparece.
+3. Abre la URL HTTPS en Chrome del Android.
+4. Menú ⋮ > Instalar aplicación o Añadir a pantalla de inicio.
+5. Inicia sesión con Chavalillo o Chavalilla y prueba con una imagen ficticia.
+
+PANEL ADMINISTRADOR
+El archivo InventarioPetSmart2026_Entregas_Evidencias.html muestra los enlaces guardados en Firebase. Para consultar el registro, se requiere una sesión de Firebase Authentication autorizada. El acceso a ese panel no hace privadas las URLs públicas de Cloudinary.
+
+ESTADO Y LIMITACIONES
+- Se cambió la miniapp para subir a Cloudinary y guardar secureUrl en Firebase.
+- Se cambió el panel de inventario para abrir la URL de Cloudinary; ya no usa Firebase Storage para las fotos.
+- Se revisó sintaxis básica local; aún no se ha probado contra Firebase/Cloudinary reales.
+- Para uso real con fotos de clientes falta el backend seguro de firma/URLs privadas de Cloudinary y una revisión cuidadosa de reglas Firebase.
