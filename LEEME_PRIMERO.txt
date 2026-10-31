@@ -1,0 +1,51 @@
+PETSMART ENTREGAS — VERSIÓN INTEGRADA PARA GITHUB PAGES
+
+CONTENIDO
+- index.html: interfaz móvil reconstruida a partir del boceto aprobado.
+- app.js: login Firebase, lectura de pedidos, filtro por repartidor, estados, fotos y ajustes.
+- firebase-config.js: configuración del proyecto Firebase existente.
+- icon.svg: icono estático de instalación; pets-hero.svg: ilustración de apoyo. El logo visible de la miniapp se lee dinámicamente de configuracion/negocio/logoUrl, igual que el inventario, la boleta y el catálogo.
+- manifest.webmanifest y sw.js: instalación Android/PWA y actualización de caché.
+
+PUBLICACIÓN EN EL REPOSITORIO PETSMART-ENTREGAS
+1. Haz una copia de los archivos actuales de https://github.com/informespetsmart/petsmart-entregas.
+2. Descomprime MiniAppEntregasPetSmart_GitHubPages.zip.
+3. Sube EL CONTENIDO que viene dentro del ZIP a la raíz de la rama que publica GitHub Pages (por ejemplo, main / root). No subas el ZIP como un archivo ni dejes los archivos dentro de una carpeta adicional.
+4. Confirma en Settings > Pages que sigue publicando desde la rama y la carpeta correctas.
+5. Abre https://informespetsmart.github.io/petsmart-entregas/ en Chrome. Si tenías la PWA instalada y ves la versión anterior, cierra la app, abre la URL en Chrome, recarga y vuelve a abrirla; el service worker usa la caché petsmart-entregas-v6.
+6. En Firebase Authentication > Settings > Authorized domains, verifica que esté informado informespetsmart.github.io.
+
+PUBLICACIÓN DEL INVENTARIO INTEGRADO
+- El archivo InventarioPetSmart2026_Entregas_Integrado.html se preparó partiendo de la versión previa con pestaña Entregas y comparándola contra el index(3).html más reciente que compartiste.
+- Antes de reemplazar el index.html del repositorio principal, descarga una copia del archivo publicado.
+- Para habilitar la asignación desde el formulario de ventas y desde la pestaña Entregas, el HTML integrado debe publicarse como index.html del repositorio principal. Si publicas solo la miniapp y no el HTML integrado, las ventas antiguas no tendrán el nuevo campo de asignación.
+
+CUENTAS
+- Chavalillo: chavalillo@repartidores.petsmart.app
+- Chavalilla: chavalilla@repartidores.petsmart.app
+Las dos cuentas deben existir en Firebase Authentication con el proveedor Email/Password. Usa las contraseñas que ya configuraste; no se guardan en los archivos.
+
+PRUEBA RECOMENDADA
+1. Publica ambos sitios y abre primero el inventario.
+2. Registra una venta de prueba con datos de envío/dirección/fecha y selecciona Chavalillo.
+3. Abre la miniapp en navegador privado o en otro perfil de Chrome e inicia sesión como Chavalillo. El pedido debe aparecer.
+4. Edita la venta en inventario y reasígnala a Chavalilla. Comprueba que deja de aparecer en Chavalillo y aparece en Chavalilla, sin crear otra venta.
+5. Prueba el cambio de estado y las fotos usando una imagen ficticia; confirma en la pestaña Entregas del inventario que el estado y el registro de evidencia se ven.
+6. Si algo falla, guarda el mensaje que aparezca y restaura temporalmente la copia anterior del archivo publicado.
+
+IMPORTANTE SOBRE FOTOS Y SEGURIDAD
+- Las fotos se envían a Cloudinary (cloud decztjlu9, preset petsmart_entregas) y se guarda metadata en Firebase en entregasEvidencias/<ventaGrupoId>/<id>.
+- El preset unsigned puede crear enlaces públicos de imagen. Usa imágenes ficticias para estas pruebas; no cargues fotos reales de clientes hasta implementar carga privada/firmada desde un backend.
+- La miniapp filtra la lista según el usuario autenticado, pero el filtro del navegador no es una barrera de seguridad. Las reglas actuales del inventario permiten acceso público a productos/ventas según la configuración que compartiste. No se debe afirmar que las entregas quedan protegidas entre repartidores hasta migrar a un esquema de datos y reglas verdaderamente restringidos. Revisa SEGURIDAD_PENDIENTE.txt.
+- No reemplaces las reglas globales de Firebase con un archivo genérico: podría bloquear o exponer módulos del inventario. En esta entrega no se modificaron las reglas remotas ni se publicó ningún archivo.
+
+VALIDACIÓN REALIZADA EN ESTA ENTREGA
+- Sintaxis JavaScript comprobada localmente.
+- Estructura estática del HTML y recursos de la PWA revisados.
+- No se inició sesión contra Firebase, no se cargaron imágenes a Cloudinary y no se verificó el comportamiento real en Android; esas pruebas requieren publicar los archivos en tu entorno.
+
+
+LOGO OFICIAL PETSMART
+- La pantalla de acceso, la barra superior y el favicon intentan leer configuracion/negocio/logoUrl, el mismo recurso de marca que usa el sistema de inventario para boletas y catálogo. No se dibuja ni se sustituye por un logo inventado.
+- Si no aparece, revisa que la URL siga guardada en Inventario > Configuración del negocio > Logo y que Firebase permita lectura de configuracion. La pantalla conserva un fallback de texto para no bloquear el acceso.
+- El icono instalado en la pantalla de inicio de Android es un recurso separado declarado en manifest.webmanifest. Para convertir también ese icono al archivo oficial exacto se necesita disponer del archivo de logo descargado; no se afirma que el icono estático se sincronice automáticamente con Firebase.
