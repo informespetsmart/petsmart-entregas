@@ -1,0 +1,14 @@
+{
+  "name": "PetSmart Entregas",
+  "short_name": "Entregas",
+  "description": "App interna PetSmart para consultar pedidos asignados y registrar evidencia de entrega.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f5f7fb",
+  "theme_color": "#fffaf5",
+  "icons": [
+    {"src":"icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}
+  ]
+}
