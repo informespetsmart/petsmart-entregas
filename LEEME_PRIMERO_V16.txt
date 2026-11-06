@@ -1,0 +1,17 @@
+PETSMART ENTREGAS + SEGUIMIENTO — V16
+
+CORRECCIÓN PRINCIPAL
+- Se corrigió la dirección de la página pública de seguimiento. Ahora utiliza https://informespetsmart.github.io/PetSmart2026/ y agrega el token real del pedido mediante ?seguimiento=TOKEN.
+- Se conserva la página pública original del inventario; esta versión no modifica ni rediseña esa página.
+- Se incrementó el caché del service worker a V16 para que los dispositivos descarguen el JavaScript corregido.
+
+PUBLICACIÓN
+1. Descomprime este ZIP.
+2. Sube todos los archivos y carpetas de su interior a la raíz del repositorio petsmart-entregas, reemplazando los anteriores.
+3. Espera a que GitHub Pages termine la implementación.
+4. Cierra completamente la miniapp en Android y vuelve a abrirla. Si sigue mostrando la versión anterior, desinstala la PWA y vuelve a instalarla desde Chrome.
+
+IMPORTANTE
+- Esta corrección solo cambia el destino del enlace de seguimiento generado por la miniapp.
+- No cambia ventas, pedidos, tokens existentes, Firebase, Cloudinary ni la vista pública del cliente.
+- La página destino debe estar publicada en el repositorio PetSmart2026 y reconocer el parámetro seguimiento.

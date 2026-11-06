@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#fffaf5">
+  <meta name="description" content="PetSmart Entregas: consulta los pedidos asignados y registra evidencia fotográfica de entrega.">
+  <meta name="color-scheme" content="light dark">
+  <link rel="manifest" href="manifest.webmanifest?v=15">
+  <link rel="icon" id="dynamicFavicon" href="icon-delivery-v15.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon-v15.png">
+  <link rel="icon" sizes="192x192" href="icon-delivery-192-v15.png">
+  <title>PetSmart · Entregas</title>
+  <style>
+    :root{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#17243b;background:#f5f7fb;font-synthesis:none;text-rendering:optimizeLegibility;--bg:#f5f7fb;--surface:#fff;--surface-2:#f6f8fc;--text:#17243b;--muted:#728097;--line:#e4e9f1;--navy:#123761;--orange:#fb7416;--orange-2:#ff8b28;--blue:#1763c7;--green:#15955b;--green-bg:#e6f8ed;--red:#cf344c;--red-bg:#fff0f2;--shadow:0 8px 26px rgba(24,46,78,.065);--radius:20px}
+    *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg)}body{min-height:100dvh;color:var(--text)}button,input,select,textarea{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid rgba(251,116,22,.25);outline-offset:2px}button:disabled{opacity:.55;cursor:wait}img{max-width:100%}.hidden{display:none!important}.app{width:100%;max-width:560px;min-height:100dvh;margin:0 auto;background:var(--bg);position:relative;padding-bottom:calc(84px + env(safe-area-inset-bottom))}.login-screen{min-height:100dvh;padding:calc(30px + env(safe-area-inset-top)) 24px calc(24px + env(safe-area-inset-bottom));display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;position:relative;background:var(--surface)}.login-screen:before,.login-screen:after{content:"";position:absolute;width:290px;height:290px;border-radius:46% 54% 58% 42%;z-index:0;opacity:.95}.login-screen:before{background:#ff8b28;left:-190px;bottom:90px;transform:rotate(28deg)}.login-screen:after{background:#1689e7;right:-210px;bottom:150px;transform:rotate(-27deg)}.login-content{width:100%;max-width:370px;position:relative;z-index:1}.brand-mark{width:48px;height:48px;display:grid;place-items:center;margin:auto;color:var(--orange)}.brand-mark svg{width:100%;height:100%}.brand-word{text-align:center;font-size:35px;line-height:1;font-weight:1000;letter-spacing:-1.8px;color:#163f73;margin-top:6px}.brand-word span{color:var(--orange)}.brand-sub{text-align:center;font-size:21px;font-weight:900;color:var(--text);margin:8px 0 2px}.login-tag{text-align:center;font-size:12px;color:var(--muted);margin:0}.pet-art{width:min(100%,310px);height:190px;object-fit:cover;object-position:center 48%;display:block;margin:20px auto 10px;border-radius:22px;border:1px solid rgba(18,55,97,.10);box-shadow:0 12px 28px rgba(18,55,97,.12);background:#edf3f8}.login-form{display:grid;gap:12px}.input-wrap{position:relative}.input-wrap .input-icon{position:absolute;left:14px;top:50%;transform:translateY(-50%);width:18px;height:18px;color:#7890ac;pointer-events:none}.field-input{width:100%;min-height:48px;border:1px solid var(--line);background:var(--surface-2);border-radius:14px;padding:13px 14px;color:var(--text);font-size:14px}.input-wrap .field-input{padding-left:42px}.primary{border:0;border-radius:999px;background:linear-gradient(135deg,var(--orange),var(--orange-2));color:white;padding:14px 18px;min-height:48px;font-weight:900;box-shadow:0 7px 18px rgba(251,116,22,.21);transition:transform .16s,filter .16s}.primary:active{transform:scale(.985)}.secondary{border:1px solid #cbd7e7;background:var(--surface);border-radius:999px;color:var(--navy);padding:12px 16px;min-height:44px;font-size:13px;font-weight:850}.login-theme{display:flex;justify-content:center;margin-top:10px}.login-footer{text-align:center;color:var(--muted);font-size:10px;margin-top:25px;letter-spacing:.04em}.form-error{font-size:12px;font-weight:750;color:var(--red);background:var(--red-bg);padding:10px 12px;border-radius:12px}.app-header{display:flex;align-items:center;gap:12px;padding:calc(15px + env(safe-area-inset-top)) 18px 13px;position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid color-mix(in srgb,var(--line) 72%,transparent)}.head-back,.head-action{flex:none;border:1px solid var(--line);background:var(--surface);color:var(--navy);width:40px;height:40px;border-radius:14px;display:grid;place-items:center}.head-title{min-width:0;flex:1}.head-title strong{display:block;font-size:19px;line-height:1.2;font-weight:950;letter-spacing:-.35px}.head-title small{display:block;font-size:10px;color:var(--muted);font-weight:750;margin-top:2px;letter-spacing:.04em}.head-logo{display:flex;align-items:center;gap:9px}.head-logo .brand-mark{width:32px;height:32px;margin:0}.head-logo .brand-word{font-size:19px;letter-spacing:-.8px;margin:0;text-align:left}.content{padding:18px 16px 22px}.hello-strip{display:flex;align-items:center;gap:13px;border:1px solid var(--line);background:var(--surface);padding:14px;border-radius:18px;box-shadow:var(--shadow);margin-bottom:17px}.truck-mark{width:46px;height:46px;flex:none;display:grid;place-items:center;background:#e7f1ff;color:#1e5b9d;border-radius:15px}.hello-strip h2{font-size:15px;margin:0 0 4px;font-weight:950}.hello-strip p{font-size:11px;color:var(--muted);margin:0;line-height:1.45}.section-heading{display:flex;align-items:end;justify-content:space-between;gap:10px;margin:18px 2px 10px}.section-heading h2{font-size:17px;font-weight:950;margin:0;letter-spacing:-.3px}.section-heading span{font-size:11px;color:var(--muted);font-weight:800}.search-wrap{position:relative;margin-bottom:12px}.search-wrap svg{width:17px;height:17px;position:absolute;left:14px;top:50%;transform:translateY(-50%);color:#8b99ae}.search-wrap input{padding-left:41px;border-radius:14px}.filter-row{display:flex;gap:7px;overflow-x:auto;padding:1px 0 8px;margin-bottom:7px;scrollbar-width:none}.filter-row::-webkit-scrollbar{display:none}.filter-chip{white-space:nowrap;display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:9px 12px;font-size:11px;font-weight:850;color:var(--muted)}.filter-chip.active{background:var(--navy);color:#fff;border-color:var(--navy)}.filter-chip .count{font-size:10px;opacity:.8}.delivery-list{display:grid;gap:11px}.delivery-card{display:grid;grid-template-columns:80px minmax(0,1fr) 16px;gap:12px;align-items:center;text-align:left;padding:12px;border:1px solid var(--line);border-radius:18px;background:var(--surface);color:var(--text);width:100%;box-shadow:0 4px 15px rgba(16,39,73,.035);transition:border-color .15s,transform .15s}.delivery-card:active{transform:scale(.992)}.product-thumb{width:80px;height:84px;border-radius:14px;object-fit:cover;background:var(--surface-2);border:1px solid var(--line)}.thumb-fallback{display:grid;place-items:center;color:#f08327;background:#fff1e5}.delivery-main{min-width:0}.delivery-topline{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:6px}.order-number{font-size:10px;letter-spacing:.035em;color:var(--muted);font-weight:850}.status-chip{display:inline-flex;align-items:center;gap:5px;padding:4px 7px;border-radius:999px;background:var(--green-bg);color:var(--green);font-size:9px;font-weight:950}.status-chip:before{content:"";width:5px;height:5px;background:currentColor;border-radius:50%}.status-chip.done{background:var(--red-bg);color:var(--red)}.status-chip.issue{background:#fff2df;color:#a75907}.customer-name{font-size:14px;font-weight:950;line-height:1.25;margin:0 0 4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.product-summary{font-size:11px;line-height:1.4;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.card-meta{display:flex;align-items:center;gap:6px;font-size:10px;color:var(--muted);font-weight:750;margin-top:7px}.driver-mini{display:inline-flex;align-items:center;gap:5px;font-size:10px;color:var(--navy);font-weight:850;margin-top:7px}.avatar{width:21px;height:21px;border-radius:50%;display:inline-grid;place-items:center;background:#e4edf9;color:#164575;font-size:9px;font-weight:950}.chevron{color:#8a9ab0;font-size:22px;line-height:1}.empty-state,.panel{border:1px dashed var(--line);border-radius:19px;background:var(--surface);padding:28px 20px;text-align:center}.empty-icon{width:56px;height:56px;margin:0 auto 12px;border-radius:18px;background:#fff0e4;color:var(--orange);display:grid;place-items:center}.empty-state h3{font-size:15px;margin:0 0 6px}.empty-state p{font-size:12px;line-height:1.5;color:var(--muted);margin:0}.order-card{border:1px solid var(--line);border-radius:19px;padding:15px;background:var(--surface);box-shadow:var(--shadow);margin-bottom:13px}.order-id-row{display:flex;align-items:center;justify-content:space-between;gap:10px}.order-code{font-weight:1000;font-size:14px}.detail-person{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:850;margin-top:14px}.detail-person svg{color:var(--navy)}.detail-line{display:flex;align-items:flex-start;gap:10px;margin-top:12px;font-size:12px;line-height:1.45;color:var(--muted)}.detail-line svg{width:16px;height:16px;flex:none;color:#285887;margin-top:1px}.mini-section-title{font-size:13px;font-weight:950;margin:17px 2px 9px}.assigned-driver{display:flex;align-items:center;gap:10px;padding:12px;border-radius:14px;background:var(--surface-2)}.assigned-driver strong{display:block;font-size:12px}.assigned-driver small{display:block;color:var(--muted);font-size:10px;margin-top:3px}.product-row{display:flex;align-items:center;gap:11px;padding:10px 0;border-bottom:1px solid var(--line)}.product-row:last-child{border-bottom:0}.product-row img{width:52px;height:52px;border-radius:12px;object-fit:cover;border:1px solid var(--line);background:var(--surface-2)}.product-row strong{display:block;font-size:12px}.product-row small{display:block;font-size:10px;color:var(--muted);margin-top:4px}.section-card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:14px;margin:12px 0}.section-card h3{font-size:13px;font-weight:950;margin:0 0 11px}.detail-actions{display:grid;gap:10px;margin-top:18px}.detail-actions .primary,.photo-footer .primary{width:100%;display:flex;align-items:center;justify-content:center;gap:9px}.photo-intro{display:flex;gap:11px;padding:13px;border:1px solid #d9e7fb;border-radius:16px;background:#eef5ff}.photo-intro strong{font-size:12px;display:block}.photo-intro p{font-size:10px;line-height:1.45;margin:5px 0 0;color:#536e93}.photo-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-top:12px}.photo-tile{position:relative;aspect-ratio:1/1;border-radius:15px;overflow:hidden;border:1px solid var(--line);background:var(--surface-2)}.photo-tile img{width:100%;height:100%;object-fit:cover;display:block}.photo-tile .remove-preview{position:absolute;top:6px;right:6px;border:0;background:rgba(12,22,39,.75);color:white;border-radius:50%;width:25px;height:25px;font-weight:950}.add-photo-tile{aspect-ratio:1/1;width:100%;border:1px dashed #b8c8dc;border-radius:15px;background:var(--surface-2);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:var(--blue);font-size:11px;font-weight:850}.add-photo-tile small{font-size:9px;color:var(--muted);font-weight:650}.theme-options{display:grid;grid-template-columns:1fr 1fr;gap:10px}.theme-option{border:1px solid var(--line);border-radius:17px;padding:17px 12px;background:var(--surface);color:var(--text);display:grid;place-items:center;gap:8px;font-size:12px;font-weight:900}.theme-option.active{border:2px solid var(--orange);padding:16px 11px}.theme-icon{width:40px;height:40px;border-radius:13px;display:grid;place-items:center;background:var(--surface-2);color:var(--navy)}.setting-row{display:flex;align-items:center;gap:12px;text-align:left;width:100%;background:transparent;color:var(--text);border:0;padding:13px 0;border-bottom:1px solid var(--line)}.setting-row:last-child{border-bottom:0}.setting-icon{width:36px;height:36px;flex:none;border-radius:12px;background:var(--surface-2);color:var(--navy);display:grid;place-items:center}.setting-text{flex:1;min-width:0}.setting-text strong{display:block;font-size:12px}.setting-text small{display:block;color:var(--muted);font-size:10px;margin-top:4px;overflow-wrap:anywhere}.setting-chevron{color:var(--muted)}.brand-footer{text-align:center;color:var(--muted);font-size:10px;margin:20px 0 4px}.bottom-nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(100%,560px);padding:9px 30px calc(9px + env(safe-area-inset-bottom));border-top:1px solid var(--line);background:color-mix(in srgb,var(--surface) 95%,transparent);backdrop-filter:blur(18px);display:grid;grid-template-columns:1fr 1fr;z-index:20}.nav-item{display:grid;place-items:center;gap:4px;border:0;background:transparent;color:var(--muted);font-size:10px;font-weight:850;padding:3px}.nav-item svg{width:21px;height:21px}.nav-item.active{color:var(--orange)}.toast{position:fixed;z-index:50;bottom:calc(76px + env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);width:calc(100% - 28px);max-width:500px;padding:12px 14px;border-radius:14px;background:#17345a;color:white;font-size:12px;font-weight:800;box-shadow:0 10px 30px rgba(0,0,0,.25)}.toast.error{background:#a61f38}.toast.success{background:#087a4b}.danger{color:var(--red)!important}.muted{color:var(--muted)}.small-note{font-size:10px;line-height:1.5;color:var(--muted)}.loading{display:flex;justify-content:center;align-items:center;gap:9px;padding:30px 12px;color:var(--muted);font-size:12px;font-weight:800}.spinner{width:18px;height:18px;border:2px solid var(--line);border-top-color:var(--orange);border-radius:50%;animation:spin .8s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
+    body.theme-dark{--bg:#071526;--surface:#0d2038;--surface-2:#102842;--text:#edf4ff;--muted:#9eb0c8;--line:#203953;--navy:#a4d1ff;--orange:#ff8428;--orange-2:#f96f16;--blue:#69b6ff;--green:#4bd58c;--green-bg:#103c34;--red:#ff7a8c;--red-bg:#3d1b2c;--shadow:0 8px 26px rgba(0,0,0,.16)}body.theme-dark .login-screen{background:#08192d}body.theme-dark .login-screen:before{background:#f8791e}body.theme-dark .login-screen:after{background:#0c65be}body.theme-dark .brand-word{color:#f0f5ff}body.theme-dark .brand-sub{color:#f0f5ff}body.theme-dark .truck-mark{background:#173b60;color:#8ac8ff}body.theme-dark .photo-intro{background:#102c49;border-color:#1d4c78}body.theme-dark .photo-intro p{color:#b7cae5}body.theme-dark .thumb-fallback{background:#2d2530}body.theme-dark .assigned-driver .avatar{background:#173b60;color:#bcdcff}body.theme-dark .theme-icon{color:#d1e2fa}
+    /* Ajustes de contraste para que los textos y controles sigan siendo legibles en tema oscuro. */
+    body.theme-dark{color:var(--text);color-scheme:dark}
+    body.theme-dark .filter-chip.active{background:#174a77;border-color:#2d6596;color:#f5f9ff}
+    body.theme-dark .detail-line svg{color:#91caff}
+    body.theme-dark .status-chip.issue{background:#4a3217;color:#ffd28b}
+    body.theme-dark .secondary{color:#d9eaff;border-color:#355574}
+    body.theme-dark .input-wrap .input-icon{color:#a9bed9}
+    body.theme-dark .search-wrap svg{color:#b2c6de}
+    body.theme-dark .photo-intro{color:#f0f6ff}
+    body.theme-dark .photo-intro strong{color:#f5f8ff}
+    body.theme-dark .photo-intro p{color:#c6d8ef}
+    body.theme-dark .small-note{color:#b7c8dd}
+    body.theme-dark .add-photo-tile{border-color:#54789d;color:#9bcfff}
+    body.theme-dark .add-photo-tile small{color:#b7c8dd}
+    body.theme-dark .photo-source-button{background:#102842;border-color:#315575;color:#edf5ff}
+    body.theme-dark .photo-source-button small{color:#b7c8dd}
+    body.theme-dark input::placeholder,body.theme-dark textarea::placeholder{color:#a9bdd5;opacity:1}
+    body.theme-dark .driver-mini .driver-label{color:#b7c8dd}
+    /* Cada dato de la tarjeta de pedido ocupa su propia línea, evitando que se concatenen. */
+    .customer-name,.product-summary,.card-meta{display:block}
+    .customer-name{margin-bottom:3px}
+    .driver-mini{display:flex;width:fit-content;align-items:center;gap:6px;margin-top:4px;line-height:1.3}
+    .driver-mini .driver-copy{display:flex;align-items:baseline;gap:4px;flex-wrap:wrap}
+    .driver-mini .driver-label{font-size:9px;color:var(--muted);font-weight:750}
+    .driver-mini .driver-name{font-size:10px;color:var(--navy);font-weight:900}
+    .card-meta{margin-top:5px;line-height:1.35;white-space:normal}
+    .product-summary{margin-top:4px;white-space:normal;overflow-wrap:anywhere}
+    .photo-source-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:12px}
+    .photo-source-button{min-width:0;min-height:112px;border:1px solid #d7e1ed;border-radius:15px;background:var(--surface);color:var(--navy);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:12px 8px;text-align:center;font-size:11px;font-weight:900}
+    .photo-source-button:active{transform:scale(.985)}
+    .photo-source-button .photo-source-icon{width:34px;height:34px;border-radius:11px;background:var(--surface-2);display:grid;place-items:center;color:var(--orange)}
+    .photo-source-button .photo-source-icon svg{width:20px;height:20px}
+    .photo-source-button small{font-size:9px;color:var(--muted);font-weight:650;line-height:1.35}
+    body.theme-dark .photo-source-button .photo-source-icon{background:#173b60;color:#ffad69}
+
+    @media(min-width:560px){body{padding:18px 0}.app{min-height:calc(100dvh - 36px);border-radius:28px;overflow:hidden;box-shadow:0 18px 60px rgba(18,39,69,.12)}.login-screen{min-height:calc(100dvh - 36px)}.bottom-nav{bottom:18px;border-radius:0 0 28px 28px}}
+    @media(max-width:360px){.content{padding-left:12px;padding-right:12px}.delivery-card{grid-template-columns:68px minmax(0,1fr) 12px;gap:9px;padding:10px}.product-thumb{width:68px;height:74px}.brand-word{font-size:32px}}
+
+    /* Logo oficial: se toma de configuracion/negocio/logoUrl, el mismo recurso del inventario (boleta y catálogo). */
+    .official-logo-shell{display:flex;justify-content:center;align-items:center;min-height:88px;margin:0 auto 10px;width:100%;}
+    .login-official-logo-shell{min-height:110px;margin-bottom:12px;}
+    .business-logo{display:block;object-fit:contain;background:transparent;max-width:100%;}
+    .login-business-logo{width:min(100%,290px);height:108px;object-position:center;}
+    .header-business-logo{width:136px;height:45px;object-position:left center;}
+    .brand-fallback{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;}
+    .brand-fallback .brand-word{font-size:31px;letter-spacing:-1.4px;margin:0;color:#123761;}
+    .brand-fallback .brand-word span{color:var(--orange);}
+    .brand-fallback .brand-sub{font-size:17px;margin:0;color:var(--text);}
+    .header-brand-fallback{align-items:flex-start;gap:3px;}
+    .head-logo .header-brand-fallback .brand-word{font-size:18px;letter-spacing:-.7px;}
+    .header-brand-fallback small{font-size:9px;letter-spacing:.14em;font-weight:900;color:var(--muted);}
+    body.theme-dark .brand-fallback .brand-word,body.theme-dark .brand-fallback .brand-sub{color:var(--text);}
+    @media(max-width:360px){.login-business-logo{height:90px}.header-business-logo{width:112px;height:40px}}
+  
+    /* Fotos guardadas: vista previa, sin acción de borrado desde la app. */
+    .saved-photo-tile{position:relative;display:block}
+    .saved-photo-open{position:absolute;inset:0;display:block}
+    .saved-photo-open img{width:100%;height:100%;object-fit:cover}
+    .saved-photo-name{position:absolute;z-index:2;left:7px;right:7px;bottom:6px;border-radius:8px;padding:5px;background:rgba(7,20,36,.78);color:#fff;font-size:9px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;pointer-events:none}
+    .observation-input{width:100%;min-height:86px;resize:vertical;padding:11px 12px;border:1px solid var(--line);border-radius:12px;background:var(--surface-2);color:var(--text);font:inherit;font-size:12px;line-height:1.45;outline:none}
+    .observation-input:focus{border-color:var(--orange);box-shadow:0 0 0 3px color-mix(in srgb,var(--orange) 18%,transparent)}
+    body.theme-dark .observation-input{background:#102842;color:#edf4ff;border-color:#315575}
+    body.theme-dark .observation-input::placeholder{color:#a9bdd5;opacity:1}
+
+    /* Confirmación previa de carga: evita subir evidencias por error. */
+    .upload-confirm-dialog{width:min(430px,calc(100vw - 28px));max-width:430px;max-height:min(82dvh,680px);padding:0;border:1px solid var(--line);border-radius:22px;background:var(--surface);color:var(--text);box-shadow:0 28px 80px rgba(5,18,38,.32);overflow:hidden}
+    .upload-confirm-dialog::backdrop{background:rgba(4,15,31,.68);backdrop-filter:blur(4px)}
+    .upload-confirm-inner{padding:20px}
+    .upload-confirm-heading{display:flex;align-items:flex-start;gap:12px;margin-bottom:14px}
+    .upload-confirm-symbol{width:42px;height:42px;flex:none;border-radius:14px;background:color-mix(in srgb,var(--orange) 15%,var(--surface-2));color:var(--orange);display:grid;place-items:center}
+    .upload-confirm-symbol svg{width:22px;height:22px}
+    .upload-confirm-heading h2{margin:1px 0 4px;font-size:16px;line-height:1.25;font-weight:950;color:var(--text)}
+    .upload-confirm-heading p{margin:0;font-size:11px;line-height:1.45;color:var(--muted)}
+    .upload-confirm-details{border:1px solid var(--line);border-radius:15px;background:var(--surface-2);padding:12px}
+    .upload-confirm-order{display:flex;justify-content:space-between;gap:12px;font-size:11px;color:var(--muted);padding-bottom:10px;border-bottom:1px solid var(--line)}
+    .upload-confirm-order strong{color:var(--text);font-weight:950}
+    .upload-confirm-total{display:flex;align-items:baseline;gap:7px;margin:10px 0;color:var(--text);font-size:11px;font-weight:800}
+    .upload-confirm-total strong{font-size:22px;color:var(--orange);line-height:1}
+    .upload-confirm-files{list-style:none;margin:0;padding:0;max-height:205px;overflow:auto;display:grid;gap:8px}
+    .upload-confirm-file{display:flex;align-items:center;gap:10px;min-width:0;padding:7px;border-radius:11px;background:var(--surface)}
+    .upload-confirm-file img{width:48px;height:48px;flex:none;border-radius:9px;object-fit:cover;background:var(--surface-2)}
+    .upload-confirm-file span{min-width:0;display:block}
+    .upload-confirm-file strong{display:block;overflow-wrap:anywhere;font-size:10px;line-height:1.35;color:var(--text)}
+    .upload-confirm-file small{display:block;color:var(--muted);font-size:9px;margin-top:3px}
+    .upload-confirm-warning{display:flex;align-items:flex-start;gap:8px;margin:12px 1px 0;color:var(--muted);font-size:10px;line-height:1.45}
+    .upload-confirm-warning svg{width:16px;height:16px;flex:none;color:var(--orange);margin-top:1px}
+    .upload-confirm-actions{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:16px}
+    .upload-confirm-actions button{min-width:0}
+    .upload-confirm-actions .secondary{width:100%}
+    .upload-confirm-actions .primary{width:100%;padding-left:10px;padding-right:10px}
+    body.theme-dark .upload-confirm-dialog{border-color:#31506e}
+    body.theme-dark .upload-confirm-details{background:#102842;border-color:#31506e}
+    body.theme-dark .upload-confirm-file{background:#0d2038}
+    body.theme-dark .upload-confirm-order{border-color:#31506e}
+    @media(max-width:360px){.upload-confirm-inner{padding:15px}.upload-confirm-actions{grid-template-columns:1fr}.upload-confirm-actions button{min-height:44px}}
+
+    /* Centro administrativo de seguimiento */
+    .tracking-toolbar{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:12px 2px 10px}
+    .tracking-toolbar strong{font-size:13px;font-weight:950;color:var(--navy)}.tracking-toolbar span{font-size:10px;color:var(--muted);font-weight:850}
+    .tracking-card{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:14px;box-shadow:0 4px 15px rgba(16,39,73,.035)}
+    .tracking-card-main{min-width:0}.tracking-card-top{display:flex;gap:7px;align-items:center;flex-wrap:wrap;margin-bottom:5px}
+    .tracking-card-ref{font-size:10px;color:var(--muted);font-weight:900;letter-spacing:.04em}
+    .tracking-state{display:inline-flex;align-items:center;border-radius:999px;padding:5px 8px;background:#e9f1ff;color:#1b5da1;font-size:9px;font-weight:950}
+    .tracking-state.done{background:var(--green-bg);color:var(--green)}
+    .tracking-state.none{background:#f1f3f6;color:#68778c}
+    .tracking-customer{display:block;font-size:14px;font-weight:950;overflow-wrap:anywhere}
+    .tracking-meta{display:block;font-size:10px;line-height:1.45;color:var(--muted);margin-top:4px}
+    .tracking-products{display:block;font-size:10px;line-height:1.4;color:var(--text);margin-top:5px;overflow-wrap:anywhere}
+    .tracking-open{border:0;border-radius:999px;background:var(--navy);color:#fff;padding:11px 13px;font-size:11px;font-weight:900;white-space:nowrap}
+    .tracking-dialog{position:fixed;inset:0;z-index:80;background:rgba(5,18,36,.72);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;padding:12px}
+    .tracking-dialog-panel{width:min(100%,760px);max-height:94dvh;overflow:auto;background:var(--surface);border:1px solid var(--line);border-radius:22px;box-shadow:0 22px 70px rgba(0,0,0,.28);padding:17px}
+    .tracking-dialog-head{display:flex;align-items:flex-start;gap:12px;justify-content:space-between;margin-bottom:12px}
+    .tracking-dialog-head h2{font-size:18px;line-height:1.2;margin:0;font-weight:1000;color:var(--navy)}
+    .tracking-dialog-head p{font-size:11px;line-height:1.45;color:var(--muted);margin:5px 0 0}
+    .tracking-close{flex:none;width:36px;height:36px;border:1px solid var(--line);border-radius:12px;background:var(--surface-2);color:var(--text);font-size:20px}
+    .tracking-order-details{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:12px 0}
+    .tracking-detail-cell{min-width:0;border:1px solid var(--line);border-radius:12px;background:var(--surface-2);padding:10px}
+    .tracking-detail-cell small{display:block;color:var(--muted);font-size:9px;font-weight:850;text-transform:uppercase;letter-spacing:.04em;margin-bottom:4px}
+    .tracking-detail-cell strong{display:block;color:var(--text);font-size:11px;line-height:1.4;overflow-wrap:anywhere}
+    .tracking-status-label{font-size:12px;font-weight:950;color:var(--navy);margin:17px 0 9px}
+    .tracking-status-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+    .tracking-state-button{border:1px solid var(--line);border-radius:12px;background:var(--surface);color:var(--text);padding:11px 9px;text-align:left;font-size:11px;font-weight:850;min-height:44px}
+    .tracking-state-button.active{border-color:var(--orange);background:#fff2e6;color:#9a430b;box-shadow:0 0 0 2px rgba(251,116,22,.10)}
+    .tracking-link-actions{display:flex;flex-wrap:wrap;gap:8px;margin:13px 0}
+    .tracking-link-actions button{flex:1;min-width:130px;border:1px solid var(--line);border-radius:999px;background:var(--surface-2);color:var(--navy);padding:11px 13px;font-size:11px;font-weight:900}
+    .tracking-link-actions .tracking-primary{border-color:var(--orange);background:var(--orange);color:#fff}
+    .tracking-preview-wrap{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#f5f7fb;margin-top:13px}
+    .tracking-preview-head{padding:11px 13px;font-size:11px;font-weight:950;color:var(--navy);background:var(--surface-2);border-bottom:1px solid var(--line)}
+    .tracking-client-iframe{display:block;width:100%;height:530px;border:0;background:#fff}
+    .tracking-footnote{font-size:10px;line-height:1.5;color:var(--muted);margin:10px 2px 0}
+    @media(max-width:390px){.tracking-card{grid-template-columns:minmax(0,1fr)}.tracking-open{width:100%}.tracking-order-details{grid-template-columns:1fr}.tracking-client-iframe{height:480px}}
+
+  
+    .date-hero{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px;border-radius:20px;background:linear-gradient(125deg,#123b69,#1c6098);color:#fff;margin:2px 0 16px;box-shadow:0 10px 24px rgba(19,58,100,.16)}.date-hero strong{display:block;font-size:19px;font-weight:950;letter-spacing:-.4px}.date-hero small{display:block;font-size:11px;opacity:.82;margin-top:4px}.date-hero .date-count{min-width:52px;height:52px;border-radius:17px;background:rgba(255,255,255,.14);display:grid;place-items:center;font-size:23px;font-weight:950}.tracking-footnote{font-size:10px;line-height:1.55;color:var(--muted);background:var(--surface-2);border-radius:13px;padding:12px;margin-top:14px}
+</style>
+</head>
+<body>
+<main class="app">
+  <section id="loginScreen" class="login-screen">
+    <div class="login-content">
+      <div class="official-logo-shell login-official-logo-shell" aria-label="Marca oficial de PetSmart">
+        <img id="businessLogoLogin" class="business-logo login-business-logo hidden" alt="Logo oficial de PetSmart">
+        <div id="loginBrandFallback" class="brand-fallback" aria-live="polite"><div class="brand-word">PetSmart</div><div class="brand-sub">Entregas</div></div>
+      </div>
+      <p class="login-tag">Comprometidos por más colitas felices</p>
+      <img class="pet-art" src="https://images.unsplash.com/photo-1765382119933-77efd0ee2921?auto=format&fit=crop&w=1200&q=85" alt="Un perro golden retriever junto a un gato blanco" loading="eager" onerror="this.onerror=null;this.removeAttribute('src');this.style.background='linear-gradient(135deg,#eef4fa,#fff7ed)'">
+      <form id="loginForm" class="login-form">
+        <label class="input-wrap"><span class="hidden">Usuario</span><svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg><input id="username" class="field-input" autocomplete="username" placeholder="Correo de administrador o usuario repartidor" required></label>
+        <label class="input-wrap"><span class="hidden">Contraseña</span><svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><input id="password" class="field-input" type="password" autocomplete="current-password" placeholder="Contraseña" required></label>
+        <div id="loginMsg" class="form-error hidden" role="alert"></div>
+        <button id="loginBtn" class="primary" type="submit">Iniciar sesión</button>
+      </form>
+      <div class="login-theme"><button id="loginThemeBtn" class="secondary" type="button">Cambiar tema</button></div>
+      <div class="login-footer">PetSmart · Entregas</div>
+    </div>
+  </section>
+
+  <section id="appScreen" class="hidden">
+    <header class="app-header">
+      <button id="backBtn" class="head-back hidden" type="button" aria-label="Regresar"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg></button>
+      <div id="headerBrand" class="head-title head-logo" aria-label="Marca oficial de PetSmart">
+        <img id="businessLogoHeader" class="business-logo header-business-logo hidden" alt="Logo oficial de PetSmart">
+        <div id="headerBrandFallback" class="brand-fallback header-brand-fallback"><div class="brand-word">PetSmart</div><small>ENTREGAS</small></div>
+      </div>
+      <div id="headerTitle" class="head-title hidden"><strong>Detalle de entrega</strong><small id="headerSubtitle">Información del pedido</small></div>
+      <button id="headerAction" class="head-action" type="button" aria-label="Abrir ajustes"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="m19.4 15 .1.1 1.4 1.1-1.4 2.4-1.7-.6a8 8 0 0 1-1.8 1l-.3 1.8h-2.8l-.3-1.8a8 8 0 0 1-1.8-1l-1.7.6-1.4-2.4L7.1 15a8 8 0 0 1 0-2l-1.4-1.1 1.4-2.4 1.7.6a8 8 0 0 1 1.8-1l.3-1.8h2.8l.3 1.8a8 8 0 0 1 1.8 1l1.7-.6 1.4 2.4-1.4 1.1a8 8 0 0 1-.1 2Z" transform="translate(-1 -1)"/></svg></button>
+    </header>
+    <section id="deliveriesView" class="content">
+      <div class="hello-strip"><div class="truck-mark"><svg viewBox="0 0 24 24" width="25" height="25" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h11v11H3zM14 10h4l3 3v4h-7z"/><circle cx="7.5" cy="18" r="2"/><circle cx="17.5" cy="18" r="2"/></svg></div><div><h2 id="helloName">¡Hola!</h2><p>Aquí están las entregas que tienes asignadas.</p></div></div>
+      <div class="date-hero"><div><strong>Entregas de hoy</strong><small>Organizadas por fecha para que encuentres rápido cada pedido</small></div><span class="date-count" id="listCount">0</span></div>
+      <label class="search-wrap"><span class="hidden">Buscar entregas</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><input id="search" class="field-input" type="search" placeholder="Buscar por cliente, pedido o producto…"></label>
+      <div class="filter-row" role="tablist" aria-label="Entregas por fecha"><button class="filter-chip active" data-date-filter="hoy" type="button">Hoy <span id="countToday" class="count">0</span></button><button class="filter-chip" data-date-filter="historial" type="button">Historial <span id="countHistory" class="count">0</span></button></div>
+      <div id="loadingOrders" class="loading"><span class="spinner"></span> Cargando pedidos asignados…</div>
+      <div id="orders" class="delivery-list"></div>
+      <div id="ordersEmpty" class="empty-state hidden"><div class="empty-icon"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 7h11v10H3zM14 10h4l3 3v4h-7z"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg></div><h3 id="emptyTitle">Todavía no tienes entregas asignadas</h3><p id="emptyCopy">Cuando el administrador te asigne una venta desde el inventario aparecerá aquí.</p></div>
+    </section>
+    <section id="detailView" class="content hidden"></section>
+    <section id="photosView" class="content hidden"></section>
+    <section id="settingsView" class="content hidden">
+      <div class="section-heading"><h2>Ajustes</h2><span>Personaliza tu app</span></div>
+      <div class="section-card"><h3>Tema de la aplicación</h3><p class="small-note" style="margin:-5px 0 12px">Elige cómo se ve tu app. La preferencia queda guardada en este dispositivo.</p><div class="theme-options"><button id="themeLight" class="theme-option" type="button"><span class="theme-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg></span>Claro</button><button id="themeDark" class="theme-option" type="button"><span class="theme-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.5 14A8.5 8.5 0 0 1 10 3.5 8.5 8.5 0 1 0 20.5 14Z"/></svg></span>Oscuro</button></div></div>
+      <div class="section-card"><h3>Cuenta</h3><div class="setting-row"><span class="setting-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></span><span class="setting-text"><strong id="settingName">Repartidor</strong><small id="settingEmail"></small></span></div><button id="logoutBtn" class="setting-row" type="button"><span class="setting-icon danger"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M10 17l5-5-5-5M15 12H3"/><path d="M12 3h7a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-7"/></svg></span><span class="setting-text"><strong class="danger">Cerrar sesión</strong><small>Cerrar sesión de PetSmart Operaciones</small></span><span class="setting-chevron">›</span></button></div>
+      <p class="small-note">La app consulta ventas existentes. No registra ventas ni crea pedidos nuevos.</p><div class="brand-footer">PETSMART · COMPROMETIDOS POR MÁS COLITAS FELICES</div>
+    </section>
+
+    <section id="trackingView" class="content hidden">
+      <div class="hello-strip"><div class="truck-mark"><svg viewBox="0 0 24 24" width="25" height="25" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h11v11H3zM14 10h4l3 3v4h-7z"/><circle cx="7.5" cy="18" r="2"/><circle cx="17.5" cy="18" r="2"/></svg></div><div><h2>Centro de seguimiento</h2><p>Administra las etapas de los pedidos y consulta exactamente la vista pública del cliente.</p></div></div>
+      <label class="search-wrap"><span class="hidden">Buscar pedidos para seguimiento</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><input id="trackingSearch" class="field-input" type="search" placeholder="Buscar por cliente, pedido, distrito o producto…"></label>
+      <div class="tracking-toolbar"><strong>Pedidos con información de entrega</strong><span id="trackingCount" class="section-count">0 pedidos</span></div><div class="filter-row" role="tablist" aria-label="Seguimiento por fecha"><button class="filter-chip active" data-tracking-date-filter="hoy" type="button">Hoy <span id="trackingTodayCount" class="count">0</span></button><button class="filter-chip" data-tracking-date-filter="historial" type="button">Historial <span id="trackingHistoryCount" class="count">0</span></button></div>
+      <div id="trackingLoading" class="loading"><span class="spinner"></span> Cargando pedidos para seguimiento…</div>
+      <div id="trackingOrders" class="delivery-list"></div>
+      <div id="trackingEmpty" class="empty-state hidden"><div class="empty-icon"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3 id="trackingEmptyTitle">Todavía no hay pedidos para seguimiento</h3><p id="trackingEmptyCopy">Los pedidos vendidos con información de entrega aparecerán aquí.</p></div>
+      <p class="tracking-footnote">“Activar enlace” genera el acceso público de seguimiento para una venta existente; no crea otra venta ni duplica el pedido. Si el enlace ya existe, podrás administrarlo. La página pública original del cliente se mantiene sin cambios.</p>
+    </section>
+
+
+    <nav id="bottomNav" class="bottom-nav" aria-label="Navegación principal"><button id="deliveriesNavBtn" class="nav-item active" data-screen="list" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M3 10.5 12 3l9 7.5M5.5 9v11h13V9M9 20v-6h6v6"/></svg>Entregas</button><button id="trackingNavBtn" class="nav-item hidden" data-screen="tracking" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5M11 7v4l3 2"/></svg>Seguimiento</button><button class="nav-item" data-screen="settings" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>Perfil</button></nav>
+  </section>
+  <dialog id="uploadConfirmDialog" class="upload-confirm-dialog" aria-labelledby="uploadConfirmTitle" aria-describedby="uploadConfirmDescription">
+    <form method="dialog" class="upload-confirm-inner">
+      <div class="upload-confirm-heading">
+        <span class="upload-confirm-symbol" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 16V4m0 0L7.5 8.5M12 4l4.5 4.5M4 15v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4"/></svg></span>
+        <div><h2 id="uploadConfirmTitle">¿Confirmas la carga?</h2><p id="uploadConfirmDescription">Revisa el pedido y cada fotografía antes de subirlas.</p></div>
+      </div>
+      <div id="uploadConfirmDetails" class="upload-confirm-details"></div>
+      <p class="upload-confirm-warning"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v6m0 4h.01"/></svg><span>Una vez cargadas, las fotografías no se podrán eliminar desde esta aplicación. Confirma solo si has revisado que sean las correctas.</span></p>
+      <div class="upload-confirm-actions"><button class="secondary" type="submit" value="cancel">Volver a revisar</button><button class="primary" id="confirmPhotoUploadBtn" type="submit" value="confirm">Sí, subir fotografías</button></div>
+    </form>
+  </dialog>
+  <div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
+</main>
+    <div id="trackingAdminDialog" class="tracking-dialog hidden" role="dialog" aria-modal="true" aria-labelledby="trackingDialogTitle">
+      <div class="tracking-dialog-panel">
+        <div class="tracking-dialog-head"><div><h2 id="trackingDialogTitle">Administrar seguimiento</h2><p id="trackingDialogSubtitle">Control de etapas del pedido</p></div><button id="trackingCloseBtn" class="tracking-close" type="button" aria-label="Cerrar">×</button></div>
+        <div id="trackingDialogDetails" class="tracking-order-details"></div>
+        <div class="tracking-status-label">Actualizar etapa del pedido</div>
+        <div id="trackingStatusGrid" class="tracking-status-grid"></div>
+        <div class="tracking-link-actions"><button id="trackingCopyBtn" type="button">Copiar enlace para el cliente</button><button id="trackingOpenBtn" class="tracking-primary" type="button">Abrir vista del cliente ↗</button></div>
+        <div class="tracking-preview-wrap"><div class="tracking-preview-head">Vista pública original · cambios en tiempo real</div><iframe id="trackingClientFrame" class="tracking-client-iframe" title="Vista original de seguimiento para el cliente" loading="lazy"></iframe></div>
+        <p class="tracking-footnote">Esta previsualización carga la página pública del inventario con el mismo token del pedido. No modifica el diseño que ve el cliente.</p>
+      </div>
+    </div>
+<script type="module" src="app.js"></script>
+</body>
+</html>
