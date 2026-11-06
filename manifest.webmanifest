@@ -1,0 +1,31 @@
+{
+  "name": "PetSmart Entregas",
+  "short_name": "Entregas",
+  "description": "App interna PetSmart para administrar entregas, consultar seguimiento de pedidos y registrar evidencia fotográfica.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f5f7fb",
+  "theme_color": "#fffaf5",
+  "icons": [
+    {
+      "src": "icon-delivery-192-v13.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-delivery-512-v13.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-delivery-maskable-512-v13.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

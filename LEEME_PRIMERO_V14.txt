@@ -1,0 +1,16 @@
+PETSMART ENTREGAS + SEGUIMIENTO — V14
+
+Esta carpeta contiene los archivos que deben quedar directamente en la raíz del repositorio GitHub Pages petsmart-entregas.
+
+Novedad V14:
+- Los repartidores conservan su área Entregas.
+- Las cuentas administradoras acceden a Seguimiento.
+- El administrador puede buscar pedidos, generar/recuperar su enlace, actualizar las siete etapas, copiar el enlace y abrir la vista pública original del cliente.
+- La página pública del cliente sigue alojada en el inventario: https://informespetsmart.github.io/InventarioPetSmart2026/ . No se ha recreado ni cambiado su diseño.
+
+Inicio de sesión:
+- Repartidores: Chavalillo / Chavalilla, como antes.
+- Administrador: correo completo y contraseña de una cuenta creada manualmente en Firebase Authentication.
+- No existe registro desde la app. Solo se deben mantener cuentas confiables en Authentication.
+
+Antes de publicar, lee ../INSTRUCCIONES_ACTUALIZACION_PETSMART_V14.txt.
